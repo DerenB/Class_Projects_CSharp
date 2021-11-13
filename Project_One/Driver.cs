@@ -27,6 +27,7 @@ namespace Project_One {
 
                 // Tests if the user's input is valid
                 if(int.TryParse(input, out response)) {
+                    //Switch statement to select user's choice
                     switch(response) {
                         case 1:
                             Console.WriteLine("TODO: Option 1");
@@ -61,21 +62,16 @@ namespace Project_One {
                             Environment.Exit(0);
                             break;
                         default:
+                            //Output if the user does not enter an interger between 0-9
                             Console.WriteLine("Not a valid input. Try again or enter 0 to exit.");
                             break;
                     }
                 } else {
+                    //Output if the user does not enter an integer
                     response = -1;
                     Console.WriteLine("Input is not a number, try again.");
                 }
             } while (response != 0);
-
-
-
-
-            //response++;
-
-            //Console.WriteLine($"You entereed {response} plus 1");
         }
     }
 }
