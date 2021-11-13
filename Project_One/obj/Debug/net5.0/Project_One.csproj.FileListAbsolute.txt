@@ -1,0 +1,15 @@
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/Project_One.deps.json
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/Project_One.runtimeconfig.json
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/Project_One.runtimeconfig.dev.json
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/Project_One.dll
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/ref/Project_One.dll
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/bin/Debug/net5.0/Project_One.pdb
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.csproj.AssemblyReference.cache
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.GeneratedMSBuildEditorConfig.editorconfig
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.AssemblyInfoInputs.cache
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.AssemblyInfo.cs
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.csproj.CoreCompileInputs.cache
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.dll
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/ref/Project_One.dll
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.pdb
+/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/Debug/net5.0/Project_One.genruntimeconfig.cache
