@@ -5,9 +5,33 @@ using System.Threading.Tasks;
 
 namespace Project_One {
     public class DataBaseRecord {
-        public String fName { get; set; }
-        public String lName { get; set; }
-        public String id {get; set; }
+        private string fName;
+        private string lName;
+        private string id;
+
+        public string getFName() {
+            return fName;
+        }
+
+        public void setFName(string fName) {
+            this.fName = fName;
+        }
+
+        public string getLName() {
+            return lName;
+        }
+
+        public void setLName(string lName) {
+            this.lName = lName;
+        }
+
+        public string getID() {
+            return id;
+        }
+
+        public void setID(string id) {
+            this.id = id;
+        }
 
         public DataBaseRecord(String f, String l, String i) {
             fName = f;
