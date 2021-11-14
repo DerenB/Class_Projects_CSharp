@@ -31,17 +31,37 @@ namespace Project_One {
                 if(duplicate(id)) {
                     Console.WriteLine($"Student {firstName} {lastName} has a duplicate ID. Not adding to database.");
                 } else {
-
+                    addThem(firstName,lastName,id);
                 }
-
-
-
-
-                Console.WriteLine($"First name: {student[0]}");
-                Console.WriteLine($"Last name: {student[1]}");
-                Console.WriteLine($"ID: {student[2]}");
-                Console.WriteLine("");
             }
+            Console.WriteLine("");
+        }
+
+        public DataBase(int sz) {
+            data = new DataBaseRecord[sz];
+            nextDBRecord = 0;
+            firstIndex = new Index();
+            lastIndex = new Index();
+            idIndex = new Index();
+
+            //Reads in the data
+            string[] dataRead = System.IO.File.ReadAllLines(@"C:\Users\dboze\Documents\Local-Repos\CS-Projects\Class_Projects_CSharp\Project_One\DataSet.txt");
+
+            foreach(string line in dataRead) {
+                string[] student = line.Split(' ');
+
+                string firstName = student[0];
+                string lastName = student[1];
+                string id = student[2];
+
+                //Checks if a duplicate is found
+                if(duplicate(id)) {
+                    Console.WriteLine($"Student {firstName} {lastName} has a duplicate ID. Not adding to database.");
+                } else {
+                    addThem(firstName,lastName,id);
+                }
+            }
+            Console.WriteLine("");
         }
 
         public void addThem(string fin, string lin, string iin) {
