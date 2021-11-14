@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace Project_One {
     public class IndexRecord {
-        public String value { get; set; }
-        public int position { get; set; }
+        private string value;
+        private int position;
 
         public IndexRecord(String f, int p) {
             value = new string(f);
@@ -24,6 +24,22 @@ namespace Project_One {
 
         public int compareTo(IndexRecord otherIndex) {
             return (value.CompareTo(otherIndex.value));
+        }
+
+        public string getValue() {
+            return value;
+        }
+
+        public void setValue(string value) {
+            this.value = value;
+        }
+
+        public int getPosition() {
+            return position;
+        }
+
+        public void setPosition(int position) {
+            this.position = position;
         }
     }
 }

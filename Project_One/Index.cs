@@ -30,8 +30,38 @@ namespace Project_One {
         }
 
         //Find String value in IndexRecord
+        public int find(String key) {
+            int low = 0, mid = 0;
+            int high = nElems - 1;
 
+            while(low <= high) {
+                mid = (low + high) / 2;
+                if (data[mid].getValue().CompareTo(key)==0) break;
+                if (key.CompareTo(data[mid].getValue()) < 0) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            return (low <= high ? data[mid].getPosition() : -1);
+        }
 
+        // Checks for duplicate IDs
+        public bool duplicate(string key) {
+             bool duped = false;
+             for(int i = nElems; i > 0; i--) {
+                 if(key.CompareTo(data[i-1].getValue()) == 0) {
+                     duped = true;
+                     break;
+                 }
+             }
+             return duped;
+        }
 
+        //Find IndexRecord in Index
+        public int find(IndexRecord key) {
+            int low = 0, mid = 0;
+            int hight = nElems - 1;
+        }
     }
 }
