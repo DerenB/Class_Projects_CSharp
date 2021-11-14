@@ -13,19 +13,16 @@ namespace Project_One {
             position = p;
         }
 
-        public IndexRecord(IndexRecord otherIndex)
-        {
+        public IndexRecord(IndexRecord otherIndex) {
             value = new string(otherIndex.value);
             position = otherIndex.position;
         }
 
-        public string toString()
-        {
+        public string toString() {
             return $"{value} {position}";
         }
 
-        public int compareTo(IndexRecord otherIndex)
-        {
+        public int compareTo(IndexRecord otherIndex) {
             return (value.CompareTo(otherIndex.value));
         }
     }
