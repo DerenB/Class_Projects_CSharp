@@ -64,6 +64,27 @@ namespace Project_One {
             Console.WriteLine("");
         }
 
+        public void addIt() {
+            string firstName, lastName, id;
+
+            Console.WriteLine("Enter the new student's information (First, Last, ID): ");
+            firstName = Console.ReadLine();
+            lastName = Console.ReadLine();
+            id = Console.ReadLine();
+
+            //Check ID Length
+            if(idenLength(id)) {
+                return;
+            }
+
+            //Checks if ID is a duplicate of something already in the system
+            if(duplicate(id)) {
+                Console.WriteLine($"The ID of {id} is already in the system. Try again");
+            } else {
+                addThem(firstName,lastName,id);
+            }
+        }
+
         public void addThem(string fin, string lin, string iin) {
             DataBaseRecord newStudent = new DataBaseRecord(fin,lin,iin);
             data[nextDBRecord] = newStudent;
@@ -83,6 +104,19 @@ namespace Project_One {
                 }
             }
             return duped;
+        }
+
+        public bool idenLength(string key) {
+            bool output = false;
+            int leng = key.Length;
+            string errorType = "";
+            if (leng != 5) {
+                if (leng > 5) errorType = "long";
+                if (leng < 5) errorType = "short";
+                Console.WriteLine($"User ID is too {errorType}, it needs to be 5 characters. Try again.");
+                Console.WriteLine("");
+            }
+            return output;
         }
 
     }
