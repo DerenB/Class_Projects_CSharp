@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Project_One
-{
-    public class IndexRecord
-    {
+namespace Project_One {
+    public class IndexRecord {
         public String value { get; set; }
         public int position { get; set; }
 
-        public IndexRecord(String f, int p)
-        {
+        public IndexRecord(String f, int p) {
             value = new string(f);
             position = p;
         }
