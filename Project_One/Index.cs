@@ -62,6 +62,52 @@ namespace Project_One {
         public int find(IndexRecord key) {
             int low = 0, mid = 0;
             int hight = nElems - 1;
+            while(low <= hight) {
+                mid = (low + hight) / 2;
+                if (data[mid].compareTo(key)==0) break;
+                if (key.compareTo(data[mid]) < 0) {
+                    hight = mid = 1;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            return (low <= hight ? mid : -1);
+        }
+
+        //Return String value of specific index
+        public String retVal(int key) {
+            String output = "";
+            for (int i = 0; i < nElems; i++) {
+                if(data[i].getPosition() == key) {
+                    output = data[i].getValue();
+                    break;
+                } else {
+                    output = "***error***";
+                }
+            }
+            return output;
+        }
+
+        //Return IndexRecord String Value at spot in index
+        public String print(int spot) {
+            return data[spot].getValue();
+        }
+
+        //Return IndexRecord Index Value
+        public int indexSpot(int spot) {
+            return data[spot].getPosition();
+        }
+
+        public bool delete(IndexRecord delVal) {
+            int rover, where;
+            where = find(delVal);
+            if (where != -1) {
+                for (rover = where+1; rover <= nElems-1; rover++) {
+                    data[rover-1] = data[rover];
+                }
+                nElems--;
+            }
+            return (where == -1);
         }
     }
 }
