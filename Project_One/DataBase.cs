@@ -119,5 +119,22 @@ namespace Project_One {
             return output;
         }
 
+        public void findIt() {
+            Console.WriteLine("Enter the ID of the student: ");
+            string key = Console.ReadLine();
+            if(idenLength(key)) {
+                return;
+            }
+            int queryIndex = idIndex.find(key);
+            if(queryIndex == -1) {
+                Console.WriteLine("ID not found, try again.");
+            } else {
+                string fName = firstIndex.retVal(queryIndex);
+                string lName = lastIndex.retVal(queryIndex);
+                string iid = idIndex.retVal(queryIndex);
+                Console.WriteLine($"Found {fName} {lName} {iid}.");
+            }
+        }
+
     }
 }
