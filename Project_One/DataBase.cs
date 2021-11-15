@@ -136,5 +136,36 @@ namespace Project_One {
             }
         }
 
+        public void deleteIt() {
+            Console.WriteLine("Enter an ID of the student to delete: ");
+            string key = Console.ReadLine();
+
+            if(idenLength(key)) {
+                return;
+            }
+
+            int where = idIndex.find(key);
+
+            if(where == -1) {
+                Console.WriteLine("ID not found, try again.");
+            } else {
+                string fName = firstIndex.retVal(where);
+                string lName = lastIndex.retVal(where);
+                string iid = idIndex.retVal(where);
+
+                Console.WriteLine($"Do you want to delete: {fName} {lName}? Y/N");
+                string response = Console.ReadLine();
+                if(response.Equals("y")) {
+                    firstIndex.delete(new IndexRecord(fName,where));
+                    lastIndex.delete(new IndexRecord(lName,where));
+                    idIndex.delete(new IndexRecord(iid,where));
+                    nextDBRecord--;
+                    Console.WriteLine("Student Deleted");
+                } else {
+                    Console.WriteLine("Not Deleting.");
+                }
+            }
+        }
+
     }
 }
