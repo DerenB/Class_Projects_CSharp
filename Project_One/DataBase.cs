@@ -7,12 +7,14 @@ namespace Project_One {
     public class DataBase {
         private DataBaseRecord[] data;
         private int nextDBRecord;
+        private int deletions;
         Index firstIndex, lastIndex, idIndex;
 
         //Main Constructor, sets size to 100 by refault and reads the data file
         public DataBase() {
             data = new DataBaseRecord[100];
             nextDBRecord = 0;
+            deletions = 0;
             firstIndex = new Index();
             lastIndex = new Index();
             idIndex = new Index();
@@ -40,6 +42,7 @@ namespace Project_One {
         public DataBase(int sz) {
             data = new DataBaseRecord[sz];
             nextDBRecord = 0;
+            deletions = 0;
             firstIndex = new Index();
             lastIndex = new Index();
             idIndex = new Index();
@@ -136,6 +139,35 @@ namespace Project_One {
             }
         }
 
+        public void print(string direction, string type) {
+            int rover, position;
+            string firstName, lastName, id;
+            if(direction.Equals("up")) {
+                
+            } else {
+
+            }
+        }
+
+        public void uPrint(Index index, int a) {
+            int i, spot;
+            int limit = nextDBRecord - deletions;
+
+            if(a == 1) {
+                for(i = 2; i < limit; i++) {
+                    //spot = index.retIndex(i);
+                    Console.WriteLine(data[spot]);
+                }
+            } else {
+                for(i = limit-1; i > 1; i--) {
+                    //spot = in.retIndex(i);
+                    Console.WriteLine(data[spot]);
+                }
+            }
+        }
+
+
+
         public void deleteIt() {
             Console.WriteLine("Enter an ID of the student to delete: ");
             string key = Console.ReadLine();
@@ -165,6 +197,7 @@ namespace Project_One {
                     Console.WriteLine("Not Deleting.");
                 }
             }
+            deletions++;
         }
 
     }
