@@ -8,11 +8,13 @@ namespace Project_One {
         private IndexRecord[] data;
         private int nElems;
 
+        // Default constructor, size 100 default
         public Index() {
             data = new IndexRecord[100];
             nElems = 0;
         }
 
+        // Default constructor, custom sized
         public Index(int sz) {
             data = new IndexRecord[sz];
             nElems = 0;
@@ -98,6 +100,7 @@ namespace Project_One {
             return data[spot].getPosition();
         }
 
+        // Deletion method
         public bool delete(IndexRecord delVal) {
             int rover, where;
             where = find(delVal);
