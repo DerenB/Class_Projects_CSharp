@@ -139,34 +139,102 @@ namespace Project_One {
             }
         }
 
-        public void print(string direction, string type) {
-            int rover, position;
-            string firstName, lastName, id;
-            if(direction.Equals("up")) {
-                
-            } else {
-
-            }
+        //Various Printing Methods
+        public void ListByFirstAscending() {
+            print("up","first");
         }
 
-        public void uPrint(Index index, int a) {
-            int i, spot;
-            int limit = nextDBRecord - deletions;
-
-            if(a == 1) {
-                for(i = 2; i < limit; i++) {
-                    //spot = index.retIndex(i);
-                    Console.WriteLine(data[spot]);
-                }
-            } else {
-                for(i = limit-1; i > 1; i--) {
-                    //spot = in.retIndex(i);
-                    Console.WriteLine(data[spot]);
-                }
-            }
+        public void ListByFirstDescending() {
+            print("down","first");
         }
 
+        public void ListByLastAscending() {
+            print("up","last");
+        }
 
+        public void ListByLastDescending() {
+            print("down","last");
+        }
+
+        public void ListByIDAscending() {
+            print("up","id");
+        }
+
+        public void ListByIDDescending() {
+            print("down","id");
+        }
+        
+        //Method to Print in various directions
+        public void print(String direction, String type) {
+            int rover,position;
+            String firstName, lastName, id;
+            if (direction.Equals("up")) {
+                switch (type) {
+                    case "first":
+                        for (rover = 0; rover < nextDBRecord; rover++) {
+                            position = firstIndex.indexSpot(rover);
+                            firstName = firstIndex.print(rover);
+                            lastName = lastIndex.retVal(position);
+                            id = idIndex.retVal(position);
+                            Console.WriteLine($"{firstName} {lastName} {id}");
+                        }
+                        break;
+                    case "last":
+                        for (rover = 0; rover < nextDBRecord; rover++) {
+                            position = lastIndex.indexSpot(rover);
+                            firstName = firstIndex.retVal(position);
+                            lastName = lastIndex.print(rover);
+                            id = idIndex.retVal(position);
+                            Console.WriteLine($"{firstName} {lastName} {id}");                    
+                        }
+                        break;
+                    case "id":
+                        for (rover = 0; rover < nextDBRecord; rover++) {
+                            position = idIndex.indexSpot(rover);
+                            firstName = firstIndex.retVal(position);
+                            lastName = lastIndex.retVal(position);
+                            id = idIndex.print(rover);
+                            Console.WriteLine($"{firstName} {lastName} {id}");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Error in printing. Try again.");
+                }
+            } else {
+                switch (type) {
+                    case "first":
+                        for (rover = nextDBRecord-1; rover >= 0; rover--) {
+                            position = firstIndex.indexSpot(rover);
+                            firstName = firstIndex.print(rover);
+                            lastName = lastIndex.retVal(position);
+                            id = idIndex.retVal(position);
+                            Console.WriteLine($"{firstName} {lastName} {id}");
+                        }
+                        break;
+                    case "last":
+                        for (rover = nextDBRecord-1; rover >= 0; rover--) {
+                            position = lastIndex.indexSpot(rover);
+                            firstName = firstIndex.retVal(position);
+                            lastName = lastIndex.print(rover);
+                            id = idIndex.retVal(position);
+                            Console.WriteLine($"{firstName} {lastName} {id}");
+                        }
+                        break;
+                    case "id":
+                        for (rover = nextDBRecord-1; rover >= 0; rover--) {
+                            position = idIndex.indexSpot(rover);
+                            firstName = firstIndex.retVal(position);
+                            lastName = lastIndex.retVal(position);
+                            id = idIndex.print(rover);
+                            Console.WriteLine($"{firstName} {lastName} {id}");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Error in printing. Try again.");
+                }
+            }
+            Console.WriteLine("");
+        }
 
         public void deleteIt() {
             Console.WriteLine("Enter an ID of the student to delete: ");

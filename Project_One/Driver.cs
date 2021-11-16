@@ -3,7 +3,7 @@
 namespace Project_One {
     class Driver {
         static void Main(string[] args) {
-            //DataBase d = new DataBase();
+            DataBase d = new DataBase();
             int response;
 
             do {
@@ -30,31 +30,31 @@ namespace Project_One {
                     //Switch statement to select user's choice
                     switch(response) {
                         case 1:
-                            Console.WriteLine("TODO: Option 1");
+                            d.addIt();
                             break;
                         case 2:
-                            Console.WriteLine("TODO: Option 2");
+                            d.deleteIt();
                             break;
                         case 3:
-                            Console.WriteLine("TODO: Option 3");
+                            d.findIt();
                             break;
                         case 4:
-                            Console.WriteLine("TODO: Option 4");
+                            d.ListByIDAscending();
                             break;
                         case 5:
-                            Console.WriteLine("TODO: Option 5");
+                            d.ListByFirstAscending();
                             break;
                         case 6:
-                            Console.WriteLine("TODO: Option 6");
+                            d.ListByLastAscending();
                             break;
                         case 7:
-                            Console.WriteLine("TODO: Option 7");
+                            d.ListByIDDescending();
                             break;
                         case 8:
-                            Console.WriteLine("TODO: Option 8");
+                            d.ListByFirstDescending();
                             break;
                         case 9:
-                            Console.WriteLine("TODO: Option 9");
+                            d.ListByLastDescending();
                             break;
                         case 0:
                             Console.WriteLine("");
