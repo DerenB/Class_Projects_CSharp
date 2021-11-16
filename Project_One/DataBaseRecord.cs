@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace Project_One {
     public class DataBaseRecord {
+        // Variables
         private string fName;
         private string lName;
         private string id;
