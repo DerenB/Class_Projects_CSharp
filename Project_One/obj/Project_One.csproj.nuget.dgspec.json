@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dboze\\Documents\\Local-Repos\\CS-Projects\\Class_Projects_CSharp\\Project_One\\Project_One.csproj": {}
+    "/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/Project_One.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dboze\\Documents\\Local-Repos\\CS-Projects\\Class_Projects_CSharp\\Project_One\\Project_One.csproj": {
+    "/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/Project_One.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dboze\\Documents\\Local-Repos\\CS-Projects\\Class_Projects_CSharp\\Project_One\\Project_One.csproj",
+        "projectUniqueName": "/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/Project_One.csproj",
         "projectName": "Project_One",
-        "projectPath": "C:\\Users\\dboze\\Documents\\Local-Repos\\CS-Projects\\Class_Projects_CSharp\\Project_One\\Project_One.csproj",
-        "packagesPath": "C:\\Users\\dboze\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dboze\\Documents\\Local-Repos\\CS-Projects\\Class_Projects_CSharp\\Project_One\\obj\\",
+        "projectPath": "/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/Project_One.csproj",
+        "packagesPath": "/Users/deren/.nuget/packages/",
+        "outputPath": "/Users/deren/Documents/GitHub/cSharpConvert/Class_Projects_CSharp/Project_One/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\dboze\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/deren/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -58,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
         }
       }
     }

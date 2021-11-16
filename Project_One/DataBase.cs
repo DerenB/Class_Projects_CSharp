@@ -20,7 +20,8 @@ namespace Project_One {
             idIndex = new Index();
 
             //Reads in the data
-            string[] dataRead = System.IO.File.ReadAllLines(@"C:\Users\dboze\Documents\Local-Repos\CS-Projects\Class_Projects_CSharp\Project_One\DataSet.txt");
+            //string[] dataRead = System.IO.File.ReadAllLines(@"C:\Users\dboze\Documents\Local-Repos\CS-Projects\Class_Projects_CSharp\Project_One\DataSet.txt");
+            string[] dataRead = System.IO.File.ReadAllLines("Project_One/DataSet.txt");
 
             foreach(string line in dataRead) {
                 string[] student = line.Split(' ');
@@ -199,6 +200,7 @@ namespace Project_One {
                         break;
                     default:
                         Console.WriteLine("Error in printing. Try again.");
+                        break;
                 }
             } else {
                 switch (type) {
@@ -231,6 +233,7 @@ namespace Project_One {
                         break;
                     default:
                         Console.WriteLine("Error in printing. Try again.");
+                        break;
                 }
             }
             Console.WriteLine("");
