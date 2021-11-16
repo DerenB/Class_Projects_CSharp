@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 
 namespace Project_One {
     public class DataBase {
-        private DataBaseRecord[] data;
-        private int nextDBRecord;
-        private int deletions;
-        Index firstIndex, lastIndex, idIndex;
+        private DataBaseRecord[] data; //Array for the database records
+        private int nextDBRecord; //Counts the number of items added
+        private int deletions; //Counts the number of items deleted
+        Index firstIndex, lastIndex, idIndex; 
 
         //Main Constructor, sets size to 100 by refault and reads the data file
         public DataBase() {
+            //Variables
             data = new DataBaseRecord[100];
             nextDBRecord = 0;
             deletions = 0;
@@ -41,6 +42,7 @@ namespace Project_One {
         }
 
         public DataBase(int sz) {
+            //Variables
             data = new DataBaseRecord[sz];
             nextDBRecord = 0;
             deletions = 0;
@@ -68,9 +70,12 @@ namespace Project_One {
             Console.WriteLine("");
         }
 
+        //Method to prompt users to add new students to the database
         public void addIt() {
+            //Variables
             string firstName, lastName, id;
 
+            //Reads in user input for new student
             Console.WriteLine("Enter the new student's information (First, Last, ID): ");
             firstName = Console.ReadLine();
             lastName = Console.ReadLine();
@@ -90,15 +95,18 @@ namespace Project_One {
         }
 
         public void addThem(string fin, string lin, string iin) {
+            //Creates a new database record entry for new student
             DataBaseRecord newStudent = new DataBaseRecord(fin,lin,iin);
             data[nextDBRecord] = newStudent;
 
+            //Inserts the new student into the indexes
             firstIndex.insert(new IndexRecord(fin,nextDBRecord),nextDBRecord);
             lastIndex.insert(new IndexRecord(lin,nextDBRecord),nextDBRecord);
             idIndex.insert(new IndexRecord(iin,nextDBRecord),nextDBRecord);
             nextDBRecord++;
         }
 
+        // Method to check if the ID key is a duplicate
         public bool duplicate(String key) {
             bool duped = false;
             for(int i = nextDBRecord; i > 0; i--) {
@@ -110,6 +118,7 @@ namespace Project_One {
             return duped;
         }
 
+        // Method to check if the ID key is the right length
         public bool idenLength(string key) {
             bool output = false;
             int leng = key.Length;
@@ -123,7 +132,9 @@ namespace Project_One {
             return output;
         }
 
+        // Method to find the user's query
         public void findIt() {
+            //Prompts the user for an ID key
             Console.WriteLine("Enter the ID of the student: ");
             string key = Console.ReadLine();
             if(idenLength(key)) {
@@ -142,26 +153,32 @@ namespace Project_One {
 
         //Various Printing Methods
         public void ListByFirstAscending() {
+            // Prints by First Name in Ascending order
             print("up","first");
         }
 
         public void ListByFirstDescending() {
+            // Prints by First Name in Descending order
             print("down","first");
         }
 
         public void ListByLastAscending() {
+            // Prints by Last Name Ascending order
             print("up","last");
         }
 
         public void ListByLastDescending() {
+            // Prints by Last Name Descending
             print("down","last");
         }
 
         public void ListByIDAscending() {
+            // Prints by ID Ascending
             print("up","id");
         }
 
         public void ListByIDDescending() {
+            // Prints by ID Descending
             print("down","id");
         }
         
@@ -239,14 +256,18 @@ namespace Project_One {
             Console.WriteLine("");
         }
 
+        // Method to delete student
         public void deleteIt() {
+            // Prompts the user
             Console.WriteLine("Enter an ID of the student to delete: ");
             string key = Console.ReadLine();
 
+            // Checks if the user entry is the right length
             if(idenLength(key)) {
                 return;
             }
 
+            // Looks for the student 
             int where = idIndex.find(key);
 
             if(where == -1) {
